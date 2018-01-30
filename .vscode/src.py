@@ -6,7 +6,7 @@ import os
 import numpy as np
 
 #there is no label 0 in our training data so subject name for index/label 0 is empty
-subjects = ["", "Bruce Willis", "Matt Damon", "George Clooney", "Leonardo DiCaprio", "Denzel Washington", "Tom Cruise", "Will Smith", "Johnny Depp", "Brad Pitt", "Ben Affleck"]
+subjects = ["", "Bruce Willis", "Matt Damon", "Jackie Chan", "Leonardo DiCaprio", "Denzel Washington", "Liv Tyler"]
 
 
 #-------------------------------------------------------------------------------
@@ -43,8 +43,7 @@ def prepare_training_data(data_folder_path):
  
         label = int(dir_name.replace("s", ""))
         
-        if label>5:
-            continue;
+     
         
         subject_dir_path = data_folder_path + "/" + dir_name
         subject_images_names = os.listdir(subject_dir_path)
@@ -134,7 +133,7 @@ test_img2 = cv2.imread("test-data/test2.jpg")
 test_img3 = cv2.imread("test-data/test3.jpg")
 test_img4 = cv2.imread("test-data/test4.jpg")
 test_img5 = cv2.imread("test-data/test5.jpg")
-#test_img6 = cv2.imread("test-data/test6.jpg")
+test_img6 = cv2.imread("test-data/test6.jpg")
 #test_img7 = cv2.imread("test-data/test7.jpg")
 #test_img8 = cv2.imread("test-data/test8.jpg")
 #test_img9 = cv2.imread("test-data/test9.jpg")
@@ -147,8 +146,8 @@ predicted_img2 = predict(test_img2)
 predicted_img3 = predict(test_img3)
 predicted_img4 = predict(test_img4)
 predicted_img5 = predict(test_img5)
-'''predicted_img6 = predict(test_img6)
-predicted_img7 = predict(test_img7)
+predicted_img6 = predict(test_img6)
+'''predicted_img7 = predict(test_img7)
 predicted_img8 = predict(test_img8)
 predicted_img9 = predict(test_img9)
 predicted_img10 = predict(test_img10)'''
@@ -162,8 +161,8 @@ cv2.imshow(subjects[2], predicted_img2)
 cv2.imshow(subjects[3], predicted_img3)
 cv2.imshow(subjects[4], predicted_img4)
 cv2.imshow(subjects[5], predicted_img5)
-'''cv2.imshow(subjects[6], predicted_img6)
-cv2.imshow(subjects[7], predicted_img7)
+cv2.imshow(subjects[6], predicted_img6)
+'''cv2.imshow(subjects[7], predicted_img7)
 cv2.imshow(subjects[8], predicted_img8)
 cv2.imshow(subjects[9], predicted_img9)
 cv2.imshow(subjects[10], predicted_img10)'''
